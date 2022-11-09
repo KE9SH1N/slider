@@ -344,6 +344,7 @@ html {
 
     .alartContainer .logoutAlart .confirmationButton a{
         font-size: calc(0.5vw + 10px);
+        text-transform: capitalize;
     }
 }
 
