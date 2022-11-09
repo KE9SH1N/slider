@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
+</head>
+<body>
+
+    <div class="sidebarContainer">
+        <div class="sidebarButton">
+            <button type="button" id="btn"><iconify-icon icon="fa6-solid:bars" style="color: white;" width="25" height="25" flip="horizontal"></iconify-icon></button>
+        </div>
+        <div class="sidebarOverlay" id="overlay"></div>
+        <div class="sidebarMenu" id="sidebarMenu">
+            <div class="sidebarLogo">
+                <img src="./assets/mainlogo.png" alt="Logo">
+                <span>x metaverse pro</span>
+            </div>
+            <div class="sidebarHead">
+                <span>Dashboard </span>
+                <iconify-icon icon="radix-icons:dashboard" style="color:white" width="20" height="20"></iconify-icon>
+            </div>
+            <ul>
+                <li>
+                    <a href="">airdrop</a>
+                    <iconify-icon icon="icomoon-free:podcast" style="color: white;" width="20" height="20" flip="horizontal"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">initial Dex offering <span>(ido)</span></a>
+                    <iconify-icon icon="simple-line-icons:graph" style="color: white;" width="20" height="20" flip="horizontal">
+                    </iconify-icon>
+                </li>
+                <li>
+                    <a href="">mining</a>
+                    <iconify-icon icon="game-icons:mining" style="color: white;" width="20" height="20" flip="horizontal"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">profile </a>
+                    <iconify-icon icon="ant-design:user-outlined" style="color:white" width="20" height="20"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">notifications</a>
+                    <iconify-icon icon="carbon:notification" style="color:white" width="20" height="20"></iconify-icon>
+                </li>
+                <li class="listContent">
+                    <div class="listLogout">
+                        <a href="">logout</a>
+                        <iconify-icon icon="ri:logout-circle-line" style="color:white" width="20" height="20" rotate="90deg"></iconify-icon>
+                    </div>
+                </li>
+                <li>
+                    <a href="">Forum</a>
+                    <iconify-icon icon="material-symbols:forum-sharp" style="color:white" width="20" height="20"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">governance</iconify-icon></a>
+                    <iconify-icon icon="fa-solid:user-friends" style="color: white;" width="20" height="20"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">docs</a>
+                    <iconify-icon icon="gg:copy" style="color: white;" width="20" height="20"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">bug bounty</a>
+                    <iconify-icon icon="bxs:bug-alt" style="color: white;" width="20" height="20"></iconify-icon>
+                </li>
+                <li>
+                    <a href="">grants</a>
+                    <iconify-icon icon="game-icons:mushroom-gills" style="color: white;" width="20" height="20" flip="horizontal">
+                    </iconify-icon>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

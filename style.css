@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    outline: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+:root{
+
+    --backgroundColor:#15185c;
+    --textColor:#FBFBFB;
+    --lightWhite:#918981;
+    --headBackground:#666;
+    --menulayoutColor:#777;
+    --transistionIn: all 0.3s ease-in;
+    --transitionOut: all 0.3s ease-out;
+
+}
+
+body{
+    width: 100%;
+    height: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.sidebarContainer{
+    width: 100%;
+}
+
+
+
+.sidebarContainer .sidebarButton{
+    right: 0px;
+    position: fixed;
+    cursor: pointer;
+    margin: 30px 50px;
+    display: none;
+
+
+}
+.sidebarContainer .sidebarButton button{
+    padding: 10px 15px;
+    background-color:#09b3aa;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+
+}
+
+
+
+.sidebarContainer .sidebarOverlay{
+    display: none;
+    position: fixed;
+	left:0;
+	top:0;
+	z-index: -499;
+	height: 100%;
+	width: 100%;
+    
+}
+
+.sidebarContainer .sidebarOverlay.active {
+    display: flex;
+    transition: var(--transistionIn);
+    background-color: rgba(106, 109, 151, 0.37);
+}
+
+
+.sidebarContainer .sidebarMenu{
+    position: fixed;
+	right:0;
+	top:0;
+    background: transparent;
+    background-color: var(--backgroundColor);
+	height: 100%;
+	width: 45%;
+	z-index: 500;
+	transform: translateX(100%);
+    transition: var(--transitionOut);
+	overflow-y: auto;
+    overflow: hidden;
+    display: none;
+    align-items: flex-end;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 20px 10px;
+    box-shadow: 1px 1px 5px darkblue;
+}
+
+.sidebarContainer .sidebarMenu.active {
+    transform: translateX(0%);
+    transition: var(--transistionIn);
+}
+
+
+
+.sidebarContainer .sidebarMenu .sidebarLogo{
+    width: 100%;
+    font-size: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 10px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.sidebarContainer .sidebarMenu .sidebarLogo img{
+    width: 15%;
+    display: block;
+    margin: auto;
+    margin-right: 0px;
+}
+
+.sidebarContainer .sidebarMenu .sidebarLogo span{
+    text-transform: uppercase;
+    color: #4a59f1;
+}
+
+.sidebarContainer .sidebarMenu .sidebarHead{
+    width: 85%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 8px 0px;
+    padding-right: 10px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background: linear-gradient(0deg, #148a7e 0%, rgba(43, 196, 182, 1) 90%, rgba(43, 196, 182, 1) 100%);
+}
+.sidebarContainer .sidebarMenu .sidebarHead span{
+    margin-right: 10px;
+    font-weight: 400;
+    color: var(--textColor);
+}
+
+
+.sidebarContainer .sidebarMenu ul{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.sidebarContainer .sidebarMenu ul li{
+    padding: 6px 0px;
+    padding-right: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+.sidebarContainer .sidebarMenu .listContent{
+    width: 100%;
+    padding: 0px 10px;
+}
+
+
+.sidebarContainer .sidebarMenu .listContent .listLogout{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin: 30px 0px;
+    padding: 25px 0px;
+    border-top: 1px solid var(--lightWhite);
+    border-bottom: 1px solid var(--lightWhite);
+}
+
+
+
+.sidebarContainer .sidebarMenu ul li a{
+    color: var(--textColor);
+    text-transform: capitalize;
+    font-weight: 300;
+    text-align: justify;
+}
+
+.sidebarContainer .sidebarMenu ul li iconify-icon{
+    margin-left: 20px;
+}
+
+.sidebarContainer .sidebarMenu ul li a span{
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+
+
+@media screen and (max-width: 500px){
+    
+    body{
+        background-color: #15185c;
+    }
+
+    .sidebarContainer .sidebarButton{
+        display: flex;
+    }
+
+    .sidebarContainer .sidebarOverlay{
+        display: none;
+        transition: var(--transitionOut);
+    }
+
+    .sidebarContainer .sidebarMenu{
+        display: flex;
+    }
+
+
+    .sidebarContainer .sidebarMenu .sidebarHead span{
+        font-size: calc(0.5vw + 10px);
+    }
+
+    .sidebarContainer .sidebarMenu ul li a{
+        font-size: calc(0.5vw + 10px);
+    }
+
+    .sidebarContainer .sidebarMenu ul li a span{
+        font-size: calc(0.5vw + 10px);
+    }
+
+    .sidebarContainer .sidebarMenu .sidebarLogo span{
+        font-size: calc(1vw + 10px);
+    }
+
+        
+}
+
+
+
+
+
