@@ -1,3 +1,4 @@
+/*font roboto*/
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap');
 
 
@@ -11,21 +12,27 @@
     font-family: 'Roboto', sans-serif;
 }
 
-:root{
+/*color code*/
 
-    --backgroundColor:#15185c;
+:root{
+    --background:#0f1141;
     --textColor:#FBFBFB;
     --lightWhite:#918981;
-    --headBackground:#666;
-    --menulayoutColor:#777;
+    --headBackground:linear-gradient(0deg, #148a7e 0%, rgba(43, 196, 182, 1) 90%, rgba(43, 196, 182, 1) 100%);
+    --brandText:#f0f1fa;
+    --menulayoutColor:#15185c;
     --transistionIn: all 0.3s ease-in;
     --transitionOut: all 0.3s ease-out;
 
 }
 
+/* root body*/
+
 body{
     width: 100%;
     height: auto;
+    background-color: var(--background);
+    
 }
 
 html {
@@ -33,15 +40,20 @@ html {
 }
 
 
+
+/*main content start here*/
+
 .sidebarContainer{
     width: 100%;
 }
 
 
+/*menu button */
 
 .sidebarContainer .sidebarButton{
     right: 0px;
     position: fixed;
+    z-index: 1;
     cursor: pointer;
     margin: 30px 50px;
     display: none;
@@ -57,40 +69,44 @@ html {
 
 }
 
-
+/*transparent overlay (default inactive state)*/
 
 .sidebarContainer .sidebarOverlay{
     display: none;
     position: fixed;
 	left:0;
 	top:0;
-	z-index: -499;
+	z-index: -10;
 	height: 100%;
 	width: 100%;
     
 }
 
+/*transparent overlay active state after clicked*/
+
 .sidebarContainer .sidebarOverlay.active {
     display: flex;
-    transition: var(--transistionIn);
+    transition: var(--transitionOut);
     background-color: rgba(106, 109, 151, 0.37);
 }
 
+
+/*main slider body  (default inactive state)*/
 
 .sidebarContainer .sidebarMenu{
     position: fixed;
 	right:0;
 	top:0;
     background: transparent;
-    background-color: var(--backgroundColor);
+    background-color: var(--menulayoutColor);
 	height: 100%;
 	width: 45%;
-	z-index: 500;
+	z-index: 20;
 	transform: translateX(100%);
     transition: var(--transitionOut);
 	overflow-y: auto;
     overflow: hidden;
-    display: none;
+    display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     flex-direction: column;
@@ -98,12 +114,15 @@ html {
     box-shadow: 1px 1px 5px darkblue;
 }
 
+/*main slider body active state after clicked */
+
 .sidebarContainer .sidebarMenu.active {
+    display: flex;
     transform: translateX(0%);
     transition: var(--transistionIn);
 }
 
-
+/*main slider brand logo */
 
 .sidebarContainer .sidebarMenu .sidebarLogo{
     width: 100%;
@@ -116,6 +135,8 @@ html {
     margin-bottom: 20px;
 }
 
+/*main slider brand logo image */
+
 .sidebarContainer .sidebarMenu .sidebarLogo img{
     width: 15%;
     display: block;
@@ -123,10 +144,15 @@ html {
     margin-right: 0px;
 }
 
+/*main slider brand title */
+
 .sidebarContainer .sidebarMenu .sidebarLogo span{
     text-transform: uppercase;
-    color: #4a59f1;
+    text-align: right;
+    color: var(--brandText);
 }
+
+/*main slider menu list heading */
 
 .sidebarContainer .sidebarMenu .sidebarHead{
     width: 85%;
@@ -137,14 +163,18 @@ html {
     padding-right: 10px;
     border-radius: 5px;
     margin-bottom: 30px;
-    background: linear-gradient(0deg, #148a7e 0%, rgba(43, 196, 182, 1) 90%, rgba(43, 196, 182, 1) 100%);
+    background: var(--headBackground);
 }
+
+/*main slider menu list heading title dashboard*/
+
 .sidebarContainer .sidebarMenu .sidebarHead span{
     margin-right: 10px;
     font-weight: 400;
     color: var(--textColor);
 }
 
+/*main slider menu unorder list */
 
 .sidebarContainer .sidebarMenu ul{
     display: flex;
@@ -154,23 +184,27 @@ html {
     width: 100%;
 }
 
+/*main slider menu unorder single list*/
+
 .sidebarContainer .sidebarMenu ul li{
     padding: 6px 0px;
     padding-right: 10px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
 }
+
+/*main slider menu list logout item */
+
 .sidebarContainer .sidebarMenu .listContent{
     width: 100%;
     padding: 0px 10px;
 }
 
-
 .sidebarContainer .sidebarMenu .listContent .listLogout{
     width: 100%;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: flex-end;
     margin: 30px 0px;
     padding: 25px 0px;
@@ -179,44 +213,106 @@ html {
 }
 
 
+/*main slider menu unorder list items*/
+
 
 .sidebarContainer .sidebarMenu ul li a{
     color: var(--textColor);
     text-transform: capitalize;
     font-weight: 300;
-    text-align: justify;
+    text-align: right;
+    
 }
+
+
+.sidebarContainer .sidebarMenu ul li a span {
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/*main slider menu unorder list icons*/
 
 .sidebarContainer .sidebarMenu ul li iconify-icon{
     margin-left: 20px;
 }
 
-.sidebarContainer .sidebarMenu ul li a span{
-    text-transform: uppercase;
+
+/*log out alart*/
+
+.alartContainer {
+    width: 80%;
+    position: absolute;
+    z-index: 600;
+    top: 40px;
+    left: 40px;
+    transform: translateY(-300%);
+    overflow-y: auto;
+    overflow: hidden;
+}
+
+.alartContainer.active {
+    display: flex;
+    transform: translateY(0%);
+    transition: var(--transitionOut);
+}
+
+.alartContainer .logoutAlart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: antiquewhite;
+    width: 20%;
+    padding: 20px 20px;
+    border: 1px solid black;
+    box-shadow: 1px 1px 2px black;
+}
+
+
+.alartContainer .logoutAlart h4 {
+    font-size: 18px;
+    text-transform: capitalize;
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+}
+
+.alartContainer .logoutAlart p {
+    font-size: 12px;
     font-weight: 300;
+    text-transform: capitalize;
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+
+.alartContainer .logoutAlart .confirmationButton {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.alartContainer .logoutAlart .confirmationButton a {
+    padding: 5px 10px;
+    border: 1px solid black;
 }
 
 
 
-@media screen and (max-width: 500px){
-    
-    body{
-        background-color: #15185c;
-    }
 
+/* mobile display responsive style*/
+
+
+@media screen and (max-width: 500px){
+
+    /* menu button active only mobile*/
+    
     .sidebarContainer .sidebarButton{
         display: flex;
     }
 
-    .sidebarContainer .sidebarOverlay{
-        display: none;
-        transition: var(--transitionOut);
-    }
-
-    .sidebarContainer .sidebarMenu{
-        display: flex;
-    }
-
+    /* font size responsiveness*/
 
     .sidebarContainer .sidebarMenu .sidebarHead span{
         font-size: calc(0.5vw + 10px);
@@ -234,7 +330,21 @@ html {
         font-size: calc(1vw + 10px);
     }
 
-        
+    .alartContainer .logoutAlart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: antiquewhite;
+        width: 40%;
+        padding: 10px 10px;
+        border: 1px solid black;
+        box-shadow: 1px 1px 2px black;
+    }
+
+    .alartContainer .logoutAlart .confirmationButton a{
+        font-size: calc(0.5vw + 10px);
+    }
 }
 
 

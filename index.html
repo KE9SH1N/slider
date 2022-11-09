@@ -5,29 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
+
+    <!--adding custom stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!--adding iconify cdn link -->
     <script src="https://code.iconify.design/iconify-icon/1.0.1/iconify-icon.min.js"></script>
 </head>
 <body>
 
-    <div class="sidebarContainer">
+    
+    <div class="sidebarContainer"> <!--main content start here-->
         <div class="sidebarButton">
             <button type="button" id="btn"><iconify-icon icon="fa6-solid:bars" style="color: white;" width="25" height="25" flip="horizontal"></iconify-icon></button>
         </div>
-        <div class="sidebarOverlay" id="overlay"></div>
+        <div class="sidebarOverlay" id="overlay"></div>  <!--transparent overlay -->
         <div class="sidebarMenu" id="sidebarMenu">
-            <div class="sidebarLogo">
-                <img src="./assets/mainlogo.png" alt="Logo">
+            <div class="sidebarLogo">                   <!--brand logo -->
+                <img src="./assets/mainlogo.png" alt="Logo">  
                 <span>x metaverse pro</span>
             </div>
-            <div class="sidebarHead">
+            <div class="sidebarHead">               <!--slider menu heading -->
                 <span>Dashboard </span>
                 <iconify-icon icon="radix-icons:dashboard" style="color:white" width="20" height="20"></iconify-icon>
             </div>
-            <ul>
-                <li>
+            <ul>                                    <!--slider unorder list -->
+                <li>                                <!--slider unorder single list -->
                     <a href="">airdrop</a>
-                    <iconify-icon icon="icomoon-free:podcast" style="color: white;" width="20" height="20" flip="horizontal"></iconify-icon>
+                    <iconify-icon icon="icomoon-free:podcast" style="color: white;" width="20" height="20" flip="horizontal"></iconify-icon>    <!--slider list item icon from iconify -->
                 </li>
                 <li>
                     <a href="">initial Dex offering <span>(ido)</span></a>
@@ -46,9 +51,9 @@
                     <a href="">notifications</a>
                     <iconify-icon icon="carbon:notification" style="color:white" width="20" height="20"></iconify-icon>
                 </li>
-                <li class="listContent">
+                <li class="listContent" id="logedOut">
                     <div class="listLogout">
-                        <a href="">logout</a>
+                        <a href="#">logout</a>
                         <iconify-icon icon="ri:logout-circle-line" style="color:white" width="20" height="20" rotate="90deg"></iconify-icon>
                     </div>
                 </li>
@@ -75,6 +80,17 @@
                 </li>
             </ul>
 
+        </div>
+    </div>
+
+    <div class="alartContainer" id="alart">
+        <div class="logoutAlart">
+            <h4>Alart !</h4>
+            <p>are you sure ?</p>
+            <div class="confirmationButton">
+                <a href="./logout.html">yes</a>
+                <a href="./index.html">no</a>
+            </div>
         </div>
     </div>
     
